@@ -42,21 +42,21 @@ class App extends React.Component {
   }
   calculateWater =()=>{
     if (this.state.temperature>20) {
-      num=this.state.temperature-20
+      // num=this.state.temperature-20
       this.setState({
-        water:this.state.water+(0.02*num)
+        water:this.state.water+0.02//*num
       })
     }
     else if(this.state.heart>120){
-      num=this.state.heart-120
+      // num=this.state.heart-120
       this.setState({
-        water:this.state.water+(0.0008*num)
+        water:this.state.water+0.0008//*num
       })
     }
     else if(this.state.steps>10000){
-      num=this.state.steps-10000
+      // num=this.state.steps-10000
       this.setState({
-        water:this.state.water+(0.00002*num)
+        water:this.state.water+0.00002//*num
       })
     }
   }
@@ -66,7 +66,7 @@ class App extends React.Component {
       <div className="container-fluid">
 
         <div className="row">
-          <Box icon="local_drink" color="#3A85FF" value={this.state.water} unit=" L" />
+          <Box icon="local_drink" color="#3A85FF" value={this.state.water} unit=" L" style={"none"} />
           {/* Water */}
           <Box icon="directions_walk" color="black" min={stepsMin} max={stepsMax} value={this.state.steps} unit=" steps" onChange={this.onStepsChange} />
           {/* Steps */}
